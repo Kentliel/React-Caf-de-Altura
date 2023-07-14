@@ -19,11 +19,11 @@ const UltimosOrigenes = () => {
                     {totalCoffees.map((coffee, index) => {
 
                         return (
-                            <div id={index} className="coffeCart gap-4 hover:bg-stone-200 box-border rounded-lg p-2 ">
+                            <div id={index} className="coffeCart gap-4 hover:bg-stone-200 box-border flex flex-col justify-center  items-center rounded-lg p-2 ">
                                 <img src={coffee.image} alt={coffee.name} />
                                 <h3 className='font-semibold'>{coffee.name}</h3>
                                 <p>{coffee.price},00 €</p>
-                                <button onClick={() => addToCartNoRepeat({ name: coffee.name, image: coffee.image, price: coffee.price, bags: 1 })} className="add box-border rounded bg-green-400 p-1 text-white items-center hover:bg-green-900 ">Añadir</button>
+                                <button onClick={() => addToCartNoRepeat({ name: coffee.name, image: coffee.image, price: coffee.price, bags: 1 })} className="add box-border rounded bg-custom-green opacity-50 w-fit p-1 text-white items-center hover:opacity-100 ">Añadir</button>
                             </div>
                         )
                     })}

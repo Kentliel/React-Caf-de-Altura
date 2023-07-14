@@ -11,12 +11,12 @@ const HeroPlantaTaza = () => {
                 <p className="textMid text-black font-normal text-sm leading-4 mb-4">Trabajamos con agricultores de todo el mundo para seleccionar los mejores granos de café
                     y que puedas viajar desde la comodidad de tu hogar.</p>
                 <div className="bottons flex justify-around gap-2">
-                    <Link to="/Origenes" className="bottonMid bg-stone-950 text-white p-3 rounded font-semibold text-sm leading-4 text-center">Descubrir orígenes</Link>
-                    <Link to="/Tienda" className="bottonMidGre p-3 bg-green-800 text-white rounded font-semibold text-sm leading-4 text-center">Comprar café</Link>
+                    <Link to="/Origenes" className="bottonMid bg-stone-950 text-white px-[24px] py-[12px] rounded font-semibold text-sm leading-4 text-center">Descubrir orígenes</Link>
+                    <Link to="/Tienda" className="bottonMidGre px-[24px] py-[12px] bg-green-800 text-white rounded font-semibold text-sm leading-4 text-center">Comprar café</Link>
                 </div>
             </section>
-            <section className="midImg p-12">
-                <a><img src="https://i.imgur.com/caiQMwm.png" alt='manoCafe'/></a>
+            <section className="midImg ">
+                <a><img className='h-[390px] w-[588px]' src="https://i.imgur.com/caiQMwm.png" alt='manoCafe'/></a>
             </section>
         </div>
     )

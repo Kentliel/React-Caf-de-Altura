@@ -10,8 +10,8 @@ const Footer = () => {
                     <Link to="/" className='font-normal text-2xl w-[186px] h-[36px] leading-9 text-white opacity-80 flex gap-[7.33px] items-center justify-center'>cafedealtura.com<img src="https://i.imgur.com/bc4UEus.png" alt='tasaCafeAltura' className="imgCoffeEnd" /></Link>
                     <p className='text-lg leading-6'><b>Te ayudamos en</b></p>
 
-                    <button className="buttonTelf bg-gray-500 p-3 flex gap-2 items-center justify-center text-center text-white text-sm leading-4 font-bold rounded-md"><img src="https://i.imgur.com/phRdjkM.png"  alt='telefPequeño' className="imgTelf" />+34 919 49 05 18</button>
-                    <button className="emailSupport bg-gray-500 p-3 flex gap-2 items-center justify-center text-center text-white text-sm leading-4 font-bold rounded-md"><img src="https://i.imgur.com/UNSlEp5.png" alt='mailWhite'/>support@example.com</button>
+                    <button className="buttonTelf bg-gray-500 px-6 py-3 flex gap-2 items-center justify-center text-center text-white text-sm leading-4 font-bold rounded-md"><img src="https://i.imgur.com/phRdjkM.png" alt='telefPequeño' className="imgTelf" />+34 919 49 05 18</button>
+                    <button className="emailSupport bg-gray-500 px-6 py-3 flex gap-2 items-center justify-center text-center text-white text-sm leading-4 font-bold rounded-md"><img src="https://i.imgur.com/UNSlEp5.png" alt='mailWhite' />support@example.com</button>
                 </section>
                 <section className="titleEnd flex gap-32 items-center justify-center ml-[446px] mt-[83.21px] mb-[43.12px]">
                     <div className="contactAtTheEnd flex flex-col gap-4 items-start justify-center text-white">

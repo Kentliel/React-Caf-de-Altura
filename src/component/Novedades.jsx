@@ -23,17 +23,17 @@ const Novedades = () => {
                     {totalCoffees?.slice(0, 4).map((coffee, index) => {
 
                         return (
-                            <div id={index} className="coffeCart gap-4 hover:bg-stone-200 box-border rounded-lg p-2 ">
+                            <div id={index} className="coffeCart gap-4 hover:bg-stone-200 box-border flex flex-col justify-center  items-center rounded-lg p-2 ">
                                 <img src={coffee.image} alt={coffee.name} />
-                                <h3 className='font-semibold'>{coffee.name}</h3>
-                                <p>{coffee.price},00 €</p>
-                                <button onClick={() => addToCartNoRepeat({ name: coffee.name, image: coffee.image, price: coffee.price, bags: 1 })} className="add box-border rounded bg-green-400 p-1 text-white items-center hover:bg-green-900 ">Añadir</button>
+                                <h3 className='font-semibold mb-3'>{coffee.name}</h3>
+                                <p className='mb-6'>{coffee.price},00 €</p>
+                                <button onClick={() => addToCartNoRepeat({ name: coffee.name, image: coffee.image, price: coffee.price, bags: 1 })} className="add box-border rounded bg-custom-green opacity-50 w-fit p-1 text-white items-center hover:opacity-100 ">Añadir</button>
                             </div>
                         )
                     })}
                 </section>
                 <Link to="/Tienda">
-                    <h4 className="seeEverything flex gap-2.5 text-black underline w-full h-4 text-sm leading-4">Ver todos<img src="https://i.imgur.com/VPzrzQp.png" alt='imgFlecha' /></h4>
+                    <h4 className="seeEverything flex gap-2.5 text-black underline font-semibold w-full h-4 text-sm leading-4">Ver todos<img src="https://i.imgur.com/VPzrzQp.png" alt='imgFlecha' /></h4>
                 </Link>
             </article >
         </div >
