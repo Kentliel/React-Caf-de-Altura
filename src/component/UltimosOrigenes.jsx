@@ -6,7 +6,7 @@ import { CartContextCoffees } from '../context/ContextCarCoffees'
 
 const UltimosOrigenes = () => {
     const { totalCoffees } = useContext(AllCoffees);
-    const {  addToCartNoRepeat } = useContext(CartContextCoffees)
+    const { addToCartNoRepeat } = useContext(CartContextCoffees)
 
     return (
         <div>

@@ -7,38 +7,40 @@ import { useContext } from 'react'
 import { CartContextCoffees } from '../context/ContextCarCoffees'
 import { useState } from 'react'
 
+
 const Cart = () => {
   const { cartTotalCoffees } = useContext(CartContextCoffees)
   const [envio, setEnvio] = useState('0')
+  const [subTotal, setSubTotal] = useState(0);
 
-  const sumaCantProductos = (cartTotalCoffees) => {
-    return cartTotalCoffees.reduce((acc, e) => {
-      acc += e.quantity;
-      return acc;
-    }, 0);
-  };
 
+
+ 
+
+  console.log(subTotal);
   const updateEnvio = (e) => setEnvio(e.target.value)
 
   return (
     <div>
       <Navbar />
       <section className="mb-12">
-        <h2 className="text-center text-[#2a5b45] text-2xl my-5">Cesta (<span>{sumaCantProductos(cartTotalCoffees)}</span>)</h2>
-
+        {console.log(cartTotalCoffees)}
+        <h2 className="text-center text-[#2a5b45] text-2xl my-5">Cesta (<span>{cartTotalCoffees.length}</span>)</h2>
         <div className="flex justify-between px-12">
           <div className="w-[60%]">
             <div className="prodEnvio">
               <h3>Productos</h3>
               {
-                (cartTotalCoffees.length === 0) ? <h2 className='my-4 p-8 bg-[#f4f4f4]'>NO HAY PRODUCTOS EN LA CESTA</h2>
+                (cartTotalCoffees?.length === 0) ? <h2 className='my-4 p-8 bg-[#f4f4f4]'>NO HAY PRODUCTOS EN LA CESTA</h2>
                   :
-                  cartTotalCoffees.map((el) => {
+                  cartTotalCoffees?.filter((coffee, index, self) => { return index === self.findIndex(c => c.name === coffee.name) }).map((el) => {
                     return (
-                      <ShoppingCart brand={el.name} img={el.img_url} price={el.price} id={el._id} quantity={el.quantity} key={el._id} />
+                      <ShoppingCart coffee={el} setSubTotal={setSubTotal} subTotal={subTotal} />
                     )
+
                   })
               }
+
             </div>
 
             <div className=" mt-4">
@@ -69,7 +71,7 @@ const Cart = () => {
 
 
 
-          <TotalCart valueEnvio={envio} />
+          <TotalCart valueEnvio={envio} subTotal={subTotal} />
 
 
 

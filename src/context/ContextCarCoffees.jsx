@@ -5,27 +5,29 @@ export const CartContextCoffees = createContext(null)
 
 const ContextCarCoffees = ({ children }) => {
     const [cartCoffees, setCartCoffees] = useState([])
-    const [cartTotalCoffees, setCartTotalCoffees] = useState();
+    const [cartTotalCoffees, setCartTotalCoffees] = useState([]);
     const [showDelete, setShowDelete] = useState(true);
-
+    
     const totalCoffeesInCart = () => {
-        return cartCoffees.length
+        console.log(typeof cartCoffees);
+        return cartCoffees
     }
 
-
+    
     const isCoffeRepeated = (coffeeInfo) => {
         for (const coffee of cartCoffees) {
             if (coffee.name === coffeeInfo.name) {
                 return true;
             }
+            
         }
         return false;
     }
 
 
     const addToCartNoRepeat = (coffeeInfo) => {
-        if (cartCoffees == null || !isCoffeRepeated(coffeeInfo)) {
-            setCartCoffees([...cartCoffees, coffeeInfo]);
+        setCartTotalCoffees([...cartTotalCoffees, coffeeInfo]);
+        if (!isCoffeRepeated(coffeeInfo)) {
         }
     }
 
@@ -51,11 +53,11 @@ const ContextCarCoffees = ({ children }) => {
 
 
     return (
-
+        <div>
         <CartContextCoffees.Provider value={{ showDelete, setShowDelete, typeShipment, setTypeShipment, onChangeValue, setCartTotalCoffees, cartTotalCoffees, sumPriceCoffee, cartCoffees, totalCoffeesInCart, setCartCoffees, addToCartNoRepeat }}>
             {children}
         </CartContextCoffees.Provider>
-
+        </div>
     )
 }
 

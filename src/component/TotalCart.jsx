@@ -1,19 +1,23 @@
 import React from 'react'
 import { useContext } from 'react'
-import ContextCarCoffees from '../context/ContextCarCoffees';
+import {CartContextCoffees} from '../context/ContextCarCoffees';
 import Button from './Buttons'
 
 
-const TotalCart = ({valueEnvio}) => {
-  const { cartTotalCoffees } = useContext(ContextCarCoffees);
 
-  const precioTotalProductos = (cartTotalCoffees) => {
+const TotalCart = ({valueEnvio, subTotal}) => {
+  const { cartTotalCoffees } = useContext(CartContextCoffees);
+
+ 
+
+  const precioTotalProductos = () => {
     let precioTotalProductos = cartTotalCoffees.reduce((acc, e) => {
-      acc += e.quantity * e.price;
+      acc +=  e.price;
       return acc;
     }, 0);
     return precioTotalProductos;
   };
+
 
   return (
     <div>
@@ -23,7 +27,7 @@ const TotalCart = ({valueEnvio}) => {
         <div>
           <div className="totCestaPrecios flex justify-between">
             <p className='mb-2'>SUBTOTAL</p>
-            <p className="totCestaSubtotal negritas mb-2">{precioTotalProductos(cartTotalCoffees)} ,00 €</p>
+            <p className="totCestaSubtotal negritas mb-2">{subTotal} ,00 €</p>
           </div>
           <div className="totCestaPrecios flex justify-between">
             <p className='mb-2'>ENVÍO</p>
@@ -34,7 +38,7 @@ const TotalCart = ({valueEnvio}) => {
         <div>
           <div className="totCestaPrecios flex justify-between">
             <p className="negritas mb-2">TOTAL</p>
-            <p className="totCestaTotal negritas mb-2">{precioTotalProductos(cartTotalCoffees) + parseInt(valueEnvio)} ,00 €</p>
+            <p className="totCestaTotal negritas mb-2">{precioTotalProductos() + Number(valueEnvio)} ,00 €</p>
           </div>
           <div className="totCestaPrecios flex justify-between">
             <p className='mb-2'></p>
