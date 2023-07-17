@@ -3,6 +3,7 @@ import Navbar from '../component/Navbar'
 import MetodoDePago from '../component/MetodoDePago'
 import DireccionDeEnvio from '../component/DireccionDeEnvio'
 import CarritoTotalPagar from '../component/CarritoTotalPagar'
+import DerechosReservados from '../component/DerechosReservados'
 import { useContext } from 'react'
 import { CartContextCoffees } from '../context/ContextCarCoffees'
 import { useState } from 'react'
@@ -26,6 +27,7 @@ const Checkout = () => {
           <CarritoTotalPagar valueEnvio={envio} subTotal={subTotal} />
         </section>
       </article>
+      <DerechosReservados />
     </div>
   )
 }

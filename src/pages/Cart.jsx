@@ -5,13 +5,13 @@ import DerechosReservados from '../component/DerechosReservados'
 import TotalCart from '../component/TotalCart'
 import { useContext } from 'react'
 import { CartContextCoffees } from '../context/ContextCarCoffees'
-import { useState } from 'react'
+
 
 
 const Cart = () => {
-  const { cartTotalCoffees } = useContext(CartContextCoffees)
+  const { cartTotalCoffees, subTotal } = useContext(CartContextCoffees)
   const { setEnvio } = useContext(CartContextCoffees)
-  const [subTotal, setSubTotal] = useState(0);
+  
 
 
   const updateEnvio = (e) => setEnvio(e.target.value)
@@ -29,9 +29,9 @@ const Cart = () => {
               {
                 (cartTotalCoffees?.length === 0) ? <h2 className='my-4 p-8 bg-[#f4f4f4]'>NO HAY PRODUCTOS EN LA CESTA</h2>
                   :
-                  cartTotalCoffees?.filter((coffee, index, self) => { return index === self.findIndex(c => c.name === coffee.name) }).map((el) => {
+                  cartTotalCoffees?.filter((coffee, index, self) => { return index === self.findIndex(coff => coff.name === coffee.name) }).map((el) => {
                     return (
-                      <ShoppingCart coffee={el} setSubTotal={setSubTotal} subTotal={subTotal} />
+                      <ShoppingCart coffee={el}  />
                     )
 
                   })

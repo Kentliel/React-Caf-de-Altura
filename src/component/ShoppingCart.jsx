@@ -4,8 +4,8 @@ import { CartContextCoffees } from '../context/ContextCarCoffees'
 
 
 
-const ShoppingCart = ({ coffee, subTotal, setSubTotal }) => {
-    const { setCartTotalCoffees, cartTotalCoffees } = useContext(CartContextCoffees)
+const ShoppingCart = ({ coffee }) => {
+    const { setCartTotalCoffees, cartTotalCoffees, setSubTotal } = useContext(CartContextCoffees)
     const [filterCoffees, setFilterCoffees] = useState([])
 
     let priceResumen = filterCoffees?.length * coffee.price;

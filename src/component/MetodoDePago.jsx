@@ -55,7 +55,7 @@ const MetodoDePago = () => {
             <hr className='m-4'></hr>
 
             <div className='inputBizum  '>
-                <div className='Header flex'>
+                <div className='Header flex gap-4'>
                     <input type="radio" className='accent-green-700' name="typeOfSend" value="Bizum" />
 
                     <div className='infoInput flex gap-4 ml-2 items-center'>
