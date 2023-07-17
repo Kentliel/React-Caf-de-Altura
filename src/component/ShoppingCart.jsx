@@ -60,7 +60,7 @@ const ShoppingCart = ({ coffee, subTotal, setSubTotal }) => {
                         </div>
                     </div>
                 </div>
-                <p className="priceResumen negritas"><span className="priceResumenSpan font-bold">{priceResumen},00 €</span></p>
+                <p className="priceResumen"><span className="priceResumenSpan font-bold">{priceResumen},00 €</span></p>
             </div>
             <hr />
         </div>

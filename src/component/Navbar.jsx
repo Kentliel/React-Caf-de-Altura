@@ -16,7 +16,7 @@ const Navbar = () => {
           <Link to='/SobreNosotros' className='text-white p-2.5 hover:bg-stone-800 rounded-lg gap-2 text-sm font-semibold leading-4'>Sobre nosotros</Link>
           <Link to='/Contacto' className='text-white p-2.5 hover:bg-stone-800 gap-2 text-sm font-semibold leading-4 rounded-md mr-[27px]'>Contacto</Link>
           <Link to='/NumeroTelf' className='text-white flex items-center p-2.5 hover:bg-stone-800 rounded-lg gap-2 text-sm font-semibold leading-4 mr-[12px]'><img src='https://i.imgur.com/phRdjkM.png' alt='telfBlanco'/>+34 919 49 05 18</Link>
-          <Link to='/IniciarSesion' className='text-white p-2.5 hover:bg-stone-700 rounded-lg gap-2 text-sm font-semibold leading-4 mr-[27px]'>Iniciar sesión</Link>
+          <Link to='/IniciarSesion' className='text-white px-6 py-3 bg-stone-700 rounded-lg gap-2 text-sm font-semibold leading-4 mr-[27px]'>Iniciar sesión</Link>
           <Link to='/Cart' className='text-white flex '><img src='https://i.imgur.com/yA9dL1k.png' alt='Bolso de la compra'/><span className="quantityProducts bg-stone-700 p-0.5 rounded-full gap-2">{ cartTotalCoffees.length }</span></Link>
 
     </div>

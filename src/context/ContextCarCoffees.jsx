@@ -6,6 +6,7 @@ export const CartContextCoffees = createContext(null)
 const ContextCarCoffees = ({ children }) => {
     const [cartCoffees, setCartCoffees] = useState([])
     const [cartTotalCoffees, setCartTotalCoffees] = useState([]);
+    const [envio, setEnvio] = useState('0')
     const [showDelete, setShowDelete] = useState(true);
     
     const totalCoffeesInCart = () => {
@@ -33,28 +34,9 @@ const ContextCarCoffees = ({ children }) => {
 
 
 
-    const sumPriceCoffee = () => {
-        let total = 0;
-        cartCoffees.map((coffee) => total += coffee.price * coffee.bags)
-        return total
-
-    }
-
-
-
-
-    const [typeShipment, setTypeShipment] = useState("0")
-
-    const onChangeValue = e => {
-        setTypeShipment(e.target.value)
-    }
-
-    
-
-
     return (
         <div>
-        <CartContextCoffees.Provider value={{ showDelete, setShowDelete, typeShipment, setTypeShipment, onChangeValue, setCartTotalCoffees, cartTotalCoffees, sumPriceCoffee, cartCoffees, totalCoffeesInCart, setCartCoffees, addToCartNoRepeat }}>
+        <CartContextCoffees.Provider value={{ showDelete, setShowDelete,  setCartTotalCoffees, cartTotalCoffees, cartCoffees, totalCoffeesInCart, setCartCoffees, addToCartNoRepeat, envio, setEnvio }}>
             {children}
         </CartContextCoffees.Provider>
         </div>

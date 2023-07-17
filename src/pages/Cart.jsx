@@ -10,14 +10,10 @@ import { useState } from 'react'
 
 const Cart = () => {
   const { cartTotalCoffees } = useContext(CartContextCoffees)
-  const [envio, setEnvio] = useState('0')
+  const { setEnvio } = useContext(CartContextCoffees)
   const [subTotal, setSubTotal] = useState(0);
 
 
-
- 
-
-  console.log(subTotal);
   const updateEnvio = (e) => setEnvio(e.target.value)
 
   return (
@@ -25,7 +21,7 @@ const Cart = () => {
       <Navbar />
       <section className="mb-12">
         {console.log(cartTotalCoffees)}
-        <h2 className="text-center text-[#2a5b45] text-2xl my-5">Cesta (<span>{cartTotalCoffees.length}</span>)</h2>
+        <h2 className="text-center text-custom-green leading-7 font-medium text-2xl my-5">Cesta (<span>{cartTotalCoffees.length}</span>)</h2>
         <div className="flex justify-between px-12">
           <div className="w-[60%]">
             <div className="prodEnvio">
@@ -71,7 +67,7 @@ const Cart = () => {
 
 
 
-          <TotalCart valueEnvio={envio} subTotal={subTotal} />
+          <TotalCart  subTotal={subTotal} />
 
 
 
