@@ -16,7 +16,7 @@ const HeroPlantaTaza = () => {
                 </div>
             </section>
             <section className="midImg ">
-                <a><img className='h-[390px] w-[588px]' src="https://i.imgur.com/caiQMwm.png" alt='manoCafe'/></a>
+                <div><img className='h-[390px] w-[588px]' src="https://i.imgur.com/caiQMwm.png" alt='manoCafe'/></div>
             </section>
         </div>
     )

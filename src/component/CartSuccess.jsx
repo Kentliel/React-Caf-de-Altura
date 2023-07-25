@@ -6,39 +6,39 @@ const CartSuccess = () => {
   const { cartTotalCoffees, envio, setSubTotal } = useContext(CartContextCoffees);
   const [filterCoffees, setFilterCoffees] = useState([])
   const [mapCoffeess, setMapCoffees] = useState([])
-  
-  
+
+
   let priceResumen = filterCoffees?.length * mapCoffeess.price;
   useEffect(() => {
     let a = cartTotalCoffees?.filter((coffe) => coffe.name === mapCoffeess.name);
     setFilterCoffees(a)
-    
+
     const sum = cartTotalCoffees.reduce((acc, coffee) => acc + coffee.price, 0)
-    
+
     setSubTotal(sum)
-    
-    
+
+
   }, [cartTotalCoffees]);
-  
+
   const precioTotalProductos = () => {
     let precioTotalProductos = cartTotalCoffees.reduce((acc, e) => {
       acc += e.price;
       return acc;
     }, 0);
     return precioTotalProductos;
-    
+
   };
 
-  useEffect(() =>{
+  useEffect(() => {
     cartTotalCoffees?.filter((coffee, index, self) => { return index === self.findIndex(c => c.name === coffee.name) }).map((coffee) => {
       return (
         setMapCoffees(coffee)
       )
-  
+
     })
   }, cartTotalCoffees)
-  
-  
+
+
   return (
     <div className='w-full h-[391.3px] mb-[346.6px] '>
       <div className="bg-[#f7f5f3] p-6 h-[fit-content] p-6 rounded">
@@ -50,12 +50,15 @@ const CartSuccess = () => {
               <p className="rounded-[50%] bg-[#0000000e] text-xs py-2 px-3">{filterCoffees?.length}</p>
             </div>
 
-            <div className="productDetail flex">
-              <img className='w-[55px] mr-4' src={mapCoffeess.image} alt={mapCoffeess.brand} />
+            <div className="productDetail flex flex-col">
+            {cartTotalCoffees.map((coffee)=>{return(<div>
+
+              <img className='w-[55px] mr-4' src={coffee.image} alt={coffee.brand} />
               <div>
-                <p className="bagsNames font-bold text-base">{mapCoffeess.brand}</p>
+                <p className="bagsNames font-bold text-base">{coffee.brand}</p>
                 <p>Paquete de café, 250 gr</p>
               </div>
+            </div>)})}
             </div>
           </div>
           <p className="priceResumen"><span className="priceResumenSpan font-bold">{priceResumen},00 €</span></p>

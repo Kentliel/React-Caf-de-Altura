@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const PreguntasFrecuentes = () => {
 
@@ -37,9 +38,9 @@ const PreguntasFrecuentes = () => {
                     </div>
                 </section>
                 <section className="weSolveYourQuestions flex flex-row text-center justify-center gap-2.5 mb-[52px] text-white underline w-full h-4 text-sm leading-4 font-semibold ">
-                    <a href="#">
+                    <div >
                         <h4 className='flex flex-row gap-4 '>Resolvemos tus dudas<img src="https://i.imgur.com/pR4N23R.png" alt='flechaBlanca' /></h4>
-                    </a>
+                    </div>
                 </section>
             </article>
 
